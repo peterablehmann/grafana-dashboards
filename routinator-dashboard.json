@@ -19,7 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 15,
+  "id": 18,
   "links": [],
   "panels": [
     {
@@ -1000,8 +1000,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1135,8 +1134,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1275,8 +1273,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1353,8 +1350,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#629e51",
-                "value": null
+                "color": "#629e51"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1459,8 +1455,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1599,8 +1594,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2358,7 +2352,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Routinator2",
+  "title": "Routinator",
   "uid": "zGvuiNgnzz",
   "version": 1,
   "weekStart": ""
