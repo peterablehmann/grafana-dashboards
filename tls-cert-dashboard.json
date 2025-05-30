@@ -18,6 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -37,6 +38,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -73,8 +75,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -101,11 +102,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
@@ -113,8 +116,8 @@
             "uid": "P1809F7CD0C75ACF3"
           },
           "disableTextWrap": false,
-          "editorMode": "code",
-          "expr": "probe_ssl_earliest_cert_expiry{job=\"$Job\"} - time()",
+          "editorMode": "builder",
+          "expr": "avg by(dst) (ssl_earliest_cert_expiry_sec{job=\"cloudprober\"})",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -129,14 +132,14 @@
       "type": "timeseries"
     }
   ],
+  "preload": false,
   "refresh": "1m",
-  "schemaVersion": 39,
+  "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
-          "selected": false,
           "text": "certs",
           "value": "certs"
         },
@@ -145,9 +148,7 @@
           "uid": "P1809F7CD0C75ACF3"
         },
         "definition": "label_values(probe_ssl_earliest_cert_expiry,job)",
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "Job",
         "options": [],
         "query": {
@@ -157,8 +158,6 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
@@ -167,7 +166,6 @@
     "from": "now-90d",
     "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "1m",
@@ -182,6 +180,5 @@
   "timezone": "browser",
   "title": "TLS",
   "uid": "adms23jqpzabkc",
-  "version": 10,
-  "weekStart": ""
+  "version": 1
 }
