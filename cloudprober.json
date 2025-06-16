@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 22,
+  "id": 23,
   "links": [],
   "liveNow": true,
   "panels": [
@@ -102,7 +102,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -111,7 +111,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "rate(latency{job=\"cloudprober\", probe=\"ping\"}[$__rate_interval])",
+          "expr": "rate(latency{job=\"cloudprober\", probe=\"$Probe\"}[$__rate_interval])",
           "fullMetaSearch": false,
           "includeNullMetadata": false,
           "instant": false,
@@ -130,7 +130,29 @@
   "schemaVersion": 41,
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "text": "pingv6",
+          "value": "pingv6"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(probe)",
+        "name": "Probe",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(probe)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/ping*/",
+        "type": "query"
+      }
+    ]
   },
   "time": {
     "from": "now-1d",
